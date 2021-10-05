@@ -9,6 +9,21 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController emailController = new TextEditingController();
+    TextEditingController passwordController = new TextEditingController();
+
+    singInType() {
+      String email = emailController.text;
+      String pass = passwordController.text;
+
+      if (email == 'luis' && pass == '1234') {
+        return Get.to(Home());
+      }
+      if (email == 'teacher' && pass == '1234') {
+        return Get.to(HomeInstructor());
+      }
+    }
+
     return Scaffold(
       body: Container(
           color: Color(0xff297F87),
@@ -32,6 +47,7 @@ class Login extends StatelessWidget {
                     child: Column(
                       children: [
                         TextField(
+                          controller: emailController,
                           style: TextStyle(color: Color(0xffFFF7AE)),
                           decoration: new InputDecoration(
                               enabledBorder: OutlineInputBorder(
@@ -41,7 +57,7 @@ class Login extends StatelessWidget {
                               border: new OutlineInputBorder(
                                   borderSide:
                                       new BorderSide(color: Color(0xffFFF7AE))),
-                              labelText: 'Username',
+                              labelText: 'Email',
                               labelStyle: TextStyle(color: Color(0xffFFF7AE)),
                               prefixIcon: const Icon(
                                 Icons.person,
@@ -56,6 +72,8 @@ class Login extends StatelessWidget {
                           ),
                         ),
                         TextField(
+                          obscureText: true,
+                          controller: passwordController,
                           style: TextStyle(color: Color(0xffFFF7AE)),
                           decoration: new InputDecoration(
                               enabledBorder: OutlineInputBorder(
@@ -112,7 +130,7 @@ class Login extends StatelessWidget {
                               primary: Color(0xffDF2E2E),
                               minimumSize: Size(double.infinity, 50)),
                           onPressed: () {
-                            Get.to(HomeInstructor());
+                            singInType();
                           },
                           child: Text(
                             'Login',
