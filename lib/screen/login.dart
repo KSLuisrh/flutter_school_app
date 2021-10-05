@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_school_app/screen/home.dart';
+import 'package:flutter_school_app/screen/home_instructor.dart';
+import 'package:flutter_school_app/screen/home_student.dart';
 import 'package:flutter_school_app/screen/register.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +14,7 @@ class Login extends StatelessWidget {
           color: Color(0xff297F87),
           child: Center(
               child: SingleChildScrollView(
+            reverse: true,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -94,7 +96,7 @@ class Login extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              onTap: (){
+                              onTap: () {
                                 Get.to(Register());
                               },
                             )
@@ -110,7 +112,7 @@ class Login extends StatelessWidget {
                               primary: Color(0xffDF2E2E),
                               minimumSize: Size(double.infinity, 50)),
                           onPressed: () {
-                            Get.to(Home());
+                            Get.to(HomeInstructor());
                           },
                           child: Text(
                             'Login',

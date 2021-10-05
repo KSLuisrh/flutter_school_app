@@ -21,6 +21,7 @@ class Register extends StatelessWidget {
           color: Color(0xff297F87),
           child: Center(
               child: SingleChildScrollView(
+            reverse: true,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -126,7 +127,7 @@ class Register extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              onTap: (){
+                              onTap: () {
                                 Get.back();
                               },
                             )

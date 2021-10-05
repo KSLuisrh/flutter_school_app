@@ -6,12 +6,9 @@ class AnnouncementsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> _entries = <String>[
-      'Action',
-      'Adventures',
-      'Battle Royal',
-      'Sport',
-      'RPG',
-      'DLC'
+      'item',
+      'item',
+      'item',
     ];
 
     return Container(
@@ -23,7 +20,7 @@ class AnnouncementsList extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (BuildContext context, idx) {
                 return Container(
-                  margin: EdgeInsets.only(left: 10),
+                  margin: EdgeInsets.only(left: 10, right: 10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
                       border: Border.all(color: Color(0xffFFF7AE))),
@@ -37,17 +34,20 @@ class AnnouncementsList extends StatelessWidget {
                               alignment: Alignment.topLeft,
                               child: Container(
                                 child: Text(
-                                  'Announcements',
+                                  'Announcement',
                                   style: TextStyle(
                                       color: Color(0xffFFF7AE), fontSize: 20),
                                 ),
                               )),
-                              Text(
-                                  'This is a sample to see the container width',
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(
-                                      color: Color(0xffFFF7AE), fontSize: 12),
-                                ),
+                          Container(
+                            width: 200,
+                            child: Text(
+                              'Dear friends stay tuned for the flutter live session',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                  color: Color(0xffFFF7AE), fontSize: 13),
+                            ),
+                          )
                         ],
                       )),
                 );
